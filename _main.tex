@@ -1,0 +1,119 @@
+\documentclass[manuscript, review, anonymous]{acmart}
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+
+
+
+\usepackage{xcolor}
+% package for grey-out text box
+\usepackage{tcolorbox}
+% for table of recs (to merge rows)
+\usepackage{multirow}
+% to reference sections between documents
+\usepackage{xr}
+\usepackage{graphicx}
+\usepackage{subcaption} % for imaes
+
+
+
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+
+
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\newcommand{\paul}[1]{\textcolor{red}{[paul: #1]}}
+\newcommand{\jh}[1]{\textcolor{violet}{[JH: #1]}}
+\newcommand{\jc}[1]{{\color{magenta}[JC: #1]}}
+\newcommand{\lj}[1]{{\color{blue}[LJ: #1]}}
+\newcommand{\eh}[1]{{\color{brown}[EH: #1]}}
+\newcommand{\recsection}[3]{
+    \paragraph{\textit{#1}} {#2}
+    \ifthenelse{\equal{#3}{}}{}{\newline\hspace*{2em}\textit{Consider}: #3}
+}
+
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\subsectionautorefname}{Section}
+\renewcommand{\subsubsectionautorefname}{Section}
+\renewcommand{\figureautorefname}{Figure}
+
+% fixing issues with whitespace
+\hyphenpenalty=10000
+\brokenpenalty=10000
+\sloppy
+\raggedbottom
+
+
+\begin{document}
+
+\title[]{Exploring Opportunities to Support Novice Visual Artists' Inspiration and Ideation with Generative AI}
+
+
+% \author{Alice Qian Zhang\textsuperscript{*}}
+% \email{aqzhang@andrew.cmu.edu}
+% \affiliation{%
+%   \institution{Carnegie Mellon University}
+%   \country{USA}
+%   \authornote{This work was completed while the author was an intern at Microsoft Research}
+% }
+
+
+  
+% \author{Hong Shen}
+% \email{hongs@andrew.cmu.edu}
+% \affiliation{%
+%   \institution{Carnegie Mellon University}
+%   \country{USA}}
+
+
+
+\renewcommand{\shortauthors}{Alice Qian Zhang, et al.}
+
+\begin{abstract}
+\input{sections/0_abstract}
+\end{abstract}
+
+
+%  TO DO add ccs
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\keywords{}
+% \received{January 2024}
+% \received[revised]{July 2024}
+% \received[accepted]{October 2024}
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+
+
+\maketitle
+
+\input{sections/1_intro}
+\input{sections/2_background}
+\input{sections/3_method}
+\input{sections/4_interview_findings}
+\input{sections/5_workshop_probes}
+% \input{sections/6_workshop_method}
+\input{sections/6_workshop_findings}
+\input{sections/7_discussion}
+% \input{sections/9_conclusion}
+
+
+
+
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{_references}
+% \input{sections/7_appendix}
+\end{document}
+\endinput
+
+
