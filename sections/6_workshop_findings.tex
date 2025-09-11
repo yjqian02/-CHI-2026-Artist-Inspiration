@@ -1,55 +1,149 @@
-\subsection{Workshop Findings}
+\section{Phase 2 (Workshop) Findings}
+
+In the following section, we present findings from our co-design workshops. We first report participants' reflections on their interactions with our prototypes and with the existing capabilities of relevant tools. We then describe new capabilities that participants surfaced through the workshops and the ways these expand the design space. Finally, we synthesize cross-cutting design tensions that span the emerging taxonomy of capabilities, highlighting trade-offs that matter for future design and deployment.
+
+\subsection{Reference, Capture, 3D-Staging} \label{reference}
+
+\subsubsection{Semantic Search and Reference Organization.}
+\label{semantic}
+
+Participants sought tools for semantic search over large image and video sets, returning per frame matches and automatically organizing and deduplicating reference material. We did not provide a prototype, and results are based on participants’ discussions and comparisons to state-of-the-art tools~\cite{VSC, lin2014visual, OrganizingPhoto}\aq{we can remove this sentence if we already said this earlier in methods, but we should keep the citations here}.
+Several participants described ideal use cases for tools that \textbf{search through videos}~\cite{GenQuery, VSC}, expressing desires to use them for the early stages of visual art-making. For example, P10 explained potential benefits of performing an \textit{``\textbf{object search}''} on full videos like they have done for singular images (P10). Additionally, P11 elaborated that a tool such as \textit{Textual Search Video Frame} ~\cite{lin2014visual} could help them do real-time multi-person tracking for interactive art projects that involve body movement (P11). In short, participants described video-level search and frame-level retrieval as scaffolding for early ideation and blocking, which reduces the time spent hunting for references and enables faster iteration on pose and motion.
+
+For a tool such as \textit{Organizing Image Collection}~\cite{OrganizingPhoto}, participants such as P13 expressed interest but noted that their personal photo libraries were not large enough to benefit: \textit{``if it were like a better Google of like finding references, that would be great. But if it were out of my own references, I just don't think I take that many photos''} (P13). Instead, P13 explained that they wanted these functions for the reference images they save from Google Search or other sources online instead. 
+Together, the findings suggest that semantic search and \textbf{automatic organization of reference libraries} would materially lower the cost of finding poses and motions during early stages for artists.
 
 
-\subsubsection{Capability Stance (what to embrace, bound, or avoid)}
-• Capabilities participants want (and why)
-• Capabilities participants use only with X safeguards or Y contexts
-• Capabilities they don’t want available by default (and why)
+\subsubsection{Pose and Camera Control with On-demand Reference Capture.}
+\label{pose}
+Participants prioritized fine-grained pose and camera control with on-demand reference capture and structure-preserving remix --- they used Interactive 3D to explore complete angles and perspectives while comparing it to model-driven pose and view edits in prior tools~\cite{wu2025qwen}. Reflecting on their experiences with our \textit{Interactive3D} prototype, artists described 3D models as helpful for \textbf{viewing a subject from a specific perspective} (P11, 13). However, they also raised concerns about fidelity: \textit{``messed up anatomy, or [other] messed up things that are not true reality---I'm afraid of that lessening my knowledge of the real world''} (P13). In short, participants valued \textbf{direct camera and pose control} in 3D as a dependable way to generate accurate references with trustworthy anatomical fidelity.
 
-\subsubsection{New Considerations}
-• Prototype-specific (issues/insights tied to our 6 particular probes)
-• GenAI-general (cross-tool cautions or reflections)
+Atop seeing value for perspective referencing, 
+participants also proposed concrete improvements to \textit{Interactive3D}. 
+For example, P1 wanted to change skin textures to make a model look \textit{``younger or older, or rougher or smoother''}. P2 wanted fine-grained control of a model (e.g., manipulating precise finger and wrist poses) while P5 suggested integration with existing workflows (e.g., model download as an OBJ file). Taken together, these point to complementary workflows: (1) \textbf{study mode} with deep control and export for detailed reference building, and (2) \textbf{quick capture mode} that limits controls for speed and focus.
 
-
-\subsubsection{New Capabilities}
-
-\todo{paul is doing this - these are needs 7 8 9 not covered by the 6}
-
-In addition to the co-design feedback on the presented 6 prototypes, participants shared new needs previously uncovered in \S\ref{interview}. We group these additional needs into 2 potential tools that should be designed by the AI community in the future to bring about impact in co-creation.
-
-The first set of tools involve improved \textbf{visual databases}. These are data management systems that include large banks of visual information alongside how they are indexed, stored, and searched by various attributes. This stemmed from needs involving better reference management, creating one's own references, and better retrieving reference from diverse attributes in both 2D and 3D. For example, P9, P10, and P11 all recommended a better visual database for indexing and retrieving 3D assets for both single and multi-object selection, with P9 giving an example of performing quick object scans and viewing them in 3D so that artists don't need to search and buy props when using them as references.
-
-A visual database can also lead to a sense of community, sharing, and reuse, a theme shared by several participants. P4 recommended an up-to-date library with searchable templates, trend recency, and links to the original post for each search, while P8 recommended a social layer as a place to share references, run remix challenges, and post plug-and-play pipelines and recipes. Both commented that the community where people can learn how others made things where equally, if not more, important than the final visual outputs.
-
-Finally, there was a need to extend these visual databases for videos as well. Participants called for efficient video search and frame analysis tools help artists to quickly find, study, and use motion, reference, and context. P8, P10, and P11 all agreed that fine-grained video frame analysis tools could help with real-time multi-person tracking for interactive art involving body movement, such as dance, action scenes, or tracking pedestrians and wildlife. P10 additionally identified how use cases like text to video frame search, video organization, and video zoom features can directly support quick retrieval and close study with references, with potential impact in video recommendation.
-
-The second set of tools involve \textbf{visual interpretations (or visual feedback?)} - simulating how another expert or novice artist perspective would react to the visuals created by the artist, as a form of feedback for learning and improvement. Despite this common need for feedback, participants differed in the type of feedback they valued - P10 preferred human critique instead of AI-generated feedback, suggesting to keep human mentors and reviewers in the loop, while P11 recommendation that AI feedback has the potential to broaden perspectives by offering role-played critics (e.g., gallery curator, animator, hobbyist), can be done at scale across multiple personas and in real time. Finally, P12 suggested a hybrid path where fast AI feedback can be combined with optional human sessions or reviews, where social attention can be obtained when audience-building matters, and when feedback can be skipped entirely when creating just for fun.
-
-Another dimension of visual interpretations is the ability of system to be more explainable in providing feedback rather than providing appealing demos, so that users becoming more trusting and have actionable insights to improve. P4 suggested always including a ``details'' text box with specific instructions to make results better, and to make existing tools more interactive so people can play with them (e.g., adjust simplicity and line weight). P8 also identified the potential to combine many complementary prototypes over multiple steps to better provide visual feedback. At the same time, P8 also pointed out a potential design tension, wanting room for `happy accidents' that require the model not over-explaining limits, providing too much feedback, and protecting the privacy of their local art and ideas.
-
-% P10 - users thought styles are opaque and unpredictable (did blending instead of “apply B to A,” odd strength effects turned art into more human-like), so the tool UI should clarify the mental model, preview style mixing, and let users constrain what can/can’t change
-% P10 - sometimes outlines depend on 3D understanding; the tool should be able to teach form-first sketching and visualize underlying volumes or muscles
-% P12 - targeted recoloring with text worked, and global prompts can increase brightness/saturation for images; tension - user wants more control over specific factors or parts with more adjustment support; current support is not transparent to user
+% Participants also reflected on the benefits of 
+Other state-of-the-art tools (e.g., \textit{Qwen Image}) also offered useful features such as changing poses and perspectives~\cite{wu2025qwen}. For example, P9 valued support to change perspectives in 2D art because it shows new angles quickly. In general, participants prioritized \textbf{speed and convenience} for early ideation stages when they needed rapid alternative views without manual setup. In short, model-driven pose and view edits offered fast suggestions for exploration, while \textit{Interactive3D} provided grounded control for precise reference generation.
 
 
+\subsubsection{3D-aware Editing of Complex Scene Changes.}
+\label{aware}
+Our analysis shows that participants sought tools capable of 3D-aware editing that enabled them to change scenes in references. Participants reflected on use cases of our \textit{Interactive3D} prototype for \textbf{editing complex backgrounds} as well as state-of-the art tools such as \textit{VoxHammer}~\cite{li2025voxhammer}. For example, P10 explained that \textit{``if you're drawing a manga, and you need the city to be your background, then you can have a 3D-model and trace in the background''} (P10). Moreover, P11 emphasized that that such 3D models for references are most useful when they \textit{``cannot picture the scene in [their] mind and [they cannot find the real scene in the world''} (P11). These reflections position 3D-aware background editing as beneficial to scaffold early composition and scene continuity in cases where references may otherwise be less accessible to participants. 
+
+Additionally, participants also provided suggestions for improving 3D editing tools to fit their workflows. Some felt overwhelmed by the capabilities of 3D editing, mainly wanting the capability to make smaller changes. P8 explained that \textit{``I haven't used Blender. I haven't used ZBrush. So would find something like 3D editing of a model to be difficult if it's a whole scene''} (P8). P12 expressed a similar desire to have such tools for simplistic changes, such as in the lighting of a scene (P12). In contrast, P11 wanted specific controls when editing such as the ability to edit a specific part of a scene while being able to lock the rest of the model (P11).These concerns suggest benefits in gentle entry points and per object, region based controls that favor small, reliable edits like lighting or camera tweaks over full scene overhauls. 
+
+\subsection{Structure-to-Style Refinement}
+\label{s2s}
+
+\subsubsection{Layered and Simplified Decomposition with Focus Control.}
+\label{decompose}
+%Artists want tools that split images into meaningful layers and simple shape block-outs, show construction lines, and add pose abstraction (stick-figure/gesture) with step-by-step anatomy layers (skeleton to muscle to planes to shading); should support structure preserving views and edits so they can isolate or mute elements, prioritize focal planes, spotlight subjects, plan main forms and composition quickly, and study underlying anatomy/structure quickly without redrawing.
+%Our Tool: Nothing!
+%Prior Lit Tool: Qwen-Image (Layer Break Down), SwiftSketch, Neural Strokes
+
+Participants expressed interest in tools that help them \textbf{break references into meaningful layers} and let them \textbf{control what to focus on}: \textbf{layered, structure preserving simplification} with simple toggles for focus~\cite{swiftsketch, neutralstroke, wu2025qwen}. Several participants reflected on instances where such tools would be useful within their early-stage workflows. For example, P9 highlighted a \textit{blockout} view as especially useful for assisting them in reading landscape forms (P9)~\cite{Blockout3D}\todo{add blockout citation}. Moreover, other participants noted the use of \textit{SwiftSketch} for reducing complex forms such as robots into simpler blocks (P4 and P10). Overall, these accounts point to the imagines uses of tools that help with layered decomposition, supporting exploration in the early-stages.
 
 
-Style exploration and control
-Guided learning, documentation, and memory
+Participants also surfaced pitfalls and changes needed. Some disliked filter style simplifications that merely restyle images \textit{``when it asks it to be more simple it looks like a pencil sketch filter''} and qualitative prompts such as \textit{simple} that do not map to consistent levels of abstraction (P10). These participants asked for progressive breakdowns of references with features such as structure-preserving edits, automatic pose abstractions, and numeric controls such as stroke count (P10). Across layers, several participants also expressed that they want the ability to mute or spotlight subjects, and plan major forms and composition quickly (P8, P9, and P10)~\cite{neutralstroke}. Moreover, P8 wanted a tool that took a values-first view, \textit{``think[ing] in areas of dark and light \dots rather than objects,''} run alongside object-aware layers to avoid “candy filter” distraction (P8). These needs point to the potential of tools that can help participants break references into meaningful layers and control focus within references.
 
-Perspective and composition tools
+% Our analysis shows that artist needs for layered, anatomy-aware scene decomposition with fine-grained focus control, tools that can peel an image from big value masses to simple block-outs, construction lines, pose abstractions, and then back up to muscles/planes/shading, while letting them isolate or mute elements and prioritize focal planes without redrawing. Although we did not show a prototype, participants evaluated the capability concept against their practice and current tools. They welcomed layered breakdowns that go beyond silhouettes to reveal internal flow: “the outline…still extends into the inner part of the drawing…you’re following the inner direction of your skeleton,” so “just doing the outline like the silhouette isn’t really enough” (P10). They disliked filter-like simplifications that merely restyle images (“when it asks it to be more simple, it…looks like a pencil-sketch filter”) and qualitative prompts (“simple/simpler”) that don’t map to consistent abstraction levels (P10). Artists want progressive processes that step through pose, muscles, planes, shading with true structure-preserving edits, automatic pose abstractions such as stick figures and gesture “to summarize the pose into a more understandable form,” and use numeric controls for abstraction (e.g., stroke count, line density, shading level) so simplification is predictable and repeatable (P10). For 2D study, they also asked for a values-first view that “thinks in areas of dark and light…rather than objects,” run alongside object-aware layers to avoid “candy filter” distraction (P8). Across all layers, they want to toggle and mute parts, spotlight subjects, and quickly plan major forms and composition.
+
+% Participants also reflected on previous research tools and idealized use cases to surface their desired requirements. P4 praised research prototypes like Swift Sketch for turning complex forms (e.g., robots) into “a few blocks…to push the forms…very exaggerated.” P9 highlighted a “blockout” view as especially useful for 3D, simple, unshaded shapes to read landscape forms and plan what to model, while doubting the same layer feature would help 2D as much.  Taken together, the feedback points to a simple multi-track setup with anatomy and gesture layers such as stick figures, construction lines, and muscle or plane breakdowns; form layers that provide block-outs and basic volumes; and value layers that display large light and dark areas followed by mid-tones. All of these should be real, structure-preserving layers that users can toggle and use to control focus.
+
+\subsubsection{Detailed Zoom, Pattern Extraction, and Transparent Adjustments.}
+\label{zoom}
+%Artists want tools with crisp zoom, resolution-enhancement, and texture inspection to zoom into a style to grab its parts (textures, patterns, color palettes) and extract motifs to support having controlled variations; controls should be transparent for local/global changes (e.g., brightness, saturation, targeted color/patterns); should also be able to adjust a single attribute (line weight, shading level, hue/saturation, parts of objects/subjects) at a time.
+%Our Tool: Visual Editing
+%Prior Lit Tool: GenQuery, Qwen-Image (Detail Zoom-In, Increase/Decrease Resolution), MagicQuill
+Our analysis showed that artists want crisp zoom, structure-preserving resolution boosts, and texture inspection that let them zoom into a style, pull out its parts (textures, patterns, and palettes), and make controlled variations with clear, transparent controls for local and global changes, including the ability to adjust a single attribute at a time. 
+
+Participants tested our Visual Editing tool and highlighted both strengths and gaps. They liked the non-destructive history because it let them “trace your steps back or forward,” which made safe experimentation possible before touching the real piece (P3). They were frustrated when style controls felt vague or cosmetic: the “pencil sketch” option did not actually follow pencil behavior and lines felt generic, and the tool was better at realistic photo fixes or playful collage looks than at preserving a specific drawing style (P8). Several edits ignored the source style or color request; for example, asking for “pink pastel” produced neon or dark tones, and overall the tool often drifted into a different style than the original (P4). Participants flagged identity and bias risks and asked for ways to test and correct them, such as masking skin near the face to see the default fill color and comparing it to the intended tone (P8). They also asked for fine control over faces and materials: a “keep the face the same” lock including skin tone and ethnicity, a matte-to-gloss slider for skin texture, and a face-only preview before propagating edits to the rest of the figure (P9). P4 also saw biased changes to facial features. P10 found that edits stayed trapped inside the selection. Changing a shirt to a hoodie produced a tight hoodie and even shifted the arm pose. They want edge-aware selections around limbs, the ability to let clothing expand beyond the original region, and a simple slider from baggy to fitted. They also want the tool to resolve ambiguous requests. For example, when a user says “change shirt to hoodie,” the tool should ask whether to replace the garment, add a graphic, recolor it, or adjust the fit. Participants pointed to other tools to round out this capability. P4 liked outfit-focused detail zoom from Qwen-Image for recreating historical clothing. They asked for true pattern extraction so users can capture motifs for cosplay or pattern making. P8 praised GenQuery-style controls that vary a single element inside a scene. They also asked for a simple perspective slider to study and change styles with clear controlled variation. P12 valued resolution upscaling to turn low-resolution assets into high-resolution references, as long as the structure stays intact and details do not get invented.
+
+\subsubsection{Controllable Style Analysis, Transfer, and Combination.}
+\label{style}
+%Artists want tools that surface a style’s components (e.g., palette, texture, pattern), enable controlled mixing/remapping with previews, learn or mimic strokes via simple outlines guidance, and allow multiple-reference transferring/combining with explicit rules about what can change and what must stay fixed.
+%Our Tool: Medium Transfer, Style Transfer, Style Combination
+%Prior Lit Tool: GenQuery, B-LoRA, MagicColor
+Artists want tools that break a style into clear parts such as palette, texture, and pattern; let them mix or remap those parts with live previews; learn or mimic strokes from simple outline guidance; and combine multiple references with explicit rules about what can change and what must stay fixed.
+
+Our prototypes, Medium Transfer, Style Transfer, and Style Combination, addresses parts of this goal, and participants compared them to prior tools. For Style Transfer, one participant said it “helps me see how I can make lines in a different way or use colors differently… and improve details.” P1 uses multiple examples so the system learns “key aspects” of their style and reflects them on a new image, and also noted the tool could help them understand their own style, but current outputs still feel too generic. P2 observed the model mostly remaps colors and rarely changes structure; P5 said structure preservation would make it more useful. P12 asked for a structure-preserving mode (edges/keypoints stay put) and “style isolation” to exclude frames or backgrounds during extraction. P12 also wanted fine-grained controls for colorfulness, brightness, and local composition so changing one factor doesn’t shift the whole image. 
+
+For Style Combination, participants were broadly positive about style combination because it let them keep the image’s structure while experimenting with new looks. When exploring, P3 wanted a quick spread of variations to compare, though they noted that a single, exact output is sometimes all that’s needed. Several people emphasized the importance of structure: P12 observed our system preserved pose and forms better than others and argued that making structure stay in place should be the default. Concrete examples reinforced this point. P4 mapped a pastel style onto a 3D character and got clean line art and a clear palette that produced a satisfying result. P10 relied on direct image-to-image conversion that kept the pose for anatomy study, and P9 explored a line-art-to-“Final Fantasy” conversion that captured the target aesthetic so well it motivated practice; they suggested pairing such outputs with palette and brush breakdowns to turn them into study guides. Participants also pushed for finer control over where styles land. P11 asked for region-aware assignment (e.g., one style for the background, another for the foreground), and P8 showed how unusual fusions (like \textit{Maus} with open impressionism) can yield metaphor-rich frames if guardrails exist for content exclusion and frame-by-frame consistency. Across these cases, P1 used combinations to generate multiple examples of a look, then reverse-engineer which specific elements were most appealing. P12 highlighted when character structure stays fixed and style varies, the tool becomes an effective source of inspiration.
 
 
-Step by step
-- Shape, structure, and layer decomposition
+\subsection{Transparency, Learning, Community}
+
+\subsubsection{Explainable and Transparent Learning Workflows.}
+\label{transparent}
+
+Artists want to pair in-tool guidance (clear instructions, guided prompts, step-by-step tutorials) with shareable provenance (view/share the exact steps, models, and settings) so artists learn how to pick and create strong/good references for new art topics/domains, understand why results look the way they do, and quickly remix or refine with better prompts or sketches inputs.
+Our Tool: Step-by-Step Tutorial
+Prior Lit Tool: PaintAlter
+
+\subsubsection{Community Spaces and Feedback Loops.}
+\label{community}
+%Artists want spaces for sharing of references, remix challenges, and reproducible pipelines (reuse others’ recipes); plus role-played AI critiques with optional human reviews to get both professional and social input; tie constructive feedback based on artists’ intent/goals and include privacy/consent controls.
+%Our Tool: Nothing!
+%Prior Lit Tool: CognArt
+Our analysis shows that artists want lightweight community spaces where they can share references, run remix challenges, and reuse each other’s recipes through reproducible, plug-and-play pipelines, paired with fast, goal-aware feedback from AI and optional human critique, all under clear privacy and consent controls. Although we did not show a prototype, participants reacted to the concept and pointed to gaps in today’s tools. P8 asked for a simple social layer that lets people post references, see many remixes of the same prompt or image, and browse how others actually made their work, not just the final piece. They described a “Hugging Face for artists,” where creators publish pipelines that record models, steps, settings, and notebooks so others can reuse or adapt them. P8 emphasized that capturing how pipelines are used would help both researchers and artists, and would surface lesser-known models and techniques that are hard to discover.
+
+Participants also highlighted adjacent needs that current platforms do not meet. P4 called for an up-to-date meme library with searchable templates, recency signals, and links back to the original post, noting that general search returns “memes from 2009” and forces people to hunt manually. The same idea applies to reference search: make it easy to find current, culturally relevant formats and import them directly into a working file or pipeline. P8 also pointed to asset-first sharing models where people publish building blocks and explain how they were used, which strengthens learning and reproducibility across the community.
+
+For critique, participants want a hybrid loop that respects intent. When seeing the idea for CognArt that shows analysis trends for historical patterns and provides feedback based on breakdown elements, P10 still preferred real human critique: “If I have access to a real human, I would prefer a real human.” P11 proposed role-played AI critics, such as a gallery curator, animator, or hobbyist, to broaden perspectives when those voices are not available to artists on demand. P12 recommended combining both: use AI for fast, professional suggestions when improving or monetizing work, seek human attention when audience building matters, and skip feedback entirely when creating just for fun. P12 added that truly professional feedback is hard to get, which is exactly where structured, objective AI guidance can help, with the option to schedule human reviews when needed.
+
+% \subsubsection{Design Tensions for Feedback Capabilities.}
+
+\subsection{Design Tensions}
+
+% to backreference capabilities:
+
+% Semantic Search and Reference Organization \ref{semantic}
+
+% Pose and Camera Control with On-demand Reference Capture \ref{pose}
+
+% 3D-aware Editing of Complex Scene Changes
+% \ref{aware}
+
+% Layered and Simplified Decomposition with Focus Control
+% \ref{decompose}
+
+% Detailed Zoom, Pattern Extraction, and Transparent Adjustments \ref{zoom}
+
+% Controllable Style Analysis, Transfer, and Combination \ref{style}
+
+% Explainable and Transparent Learning Workflows \ref{transparent}
+
+% Community Spaces and Feedback Loops \ref{community}
 
 
-Pose, gesture, and anatomy abstraction
 
-\textbf{\textit{Fig 2. Final Taxonomy v2 after workshops (what changed and why)}}
+In this section, we highlight tensions that emerged throughout participants' reflections on capabilities in the co-design workshops. 
 
-Discussion - Connection to design framework of how v2 translates into actionable design implications for future genAI tools
+\subsubsection{Assistance vs Independence.} 
+A major tension emerged around how much assistance models should provide while still preserving novice artists agency and workflow. Participants welcomed tools that could teach and scaffold within the early-stages of their workflow, but insisted that such guidance should not steer their work. P8 wanted live \textit{``what this looks like''} matches based on art history and pop-culture to build taste and test how others might read their work, but warned that real-time labeling risks boxing them in byimporting biased and clichéd references, discouraging originality, and breaking creative flow (P8). P8 suggested offering multiple procedural paths with a simple timeline to switch among them, prompts such as \textit{``what else could go here?''}) to invite abstraction, and light intent checking (\textit{``here’s how I read your prompt, here is how my model works''}) so agency remains with the artist(P8).
+% Another design tension emerged between models that helped scaffold the artistic process into individual steps versus enabling artists to freely explore for themselves. Specifically, artists commented that tutorials and AI guidance that split work into scaffolded steps can help with building confidence and learning, but argued that such a constrained setup may hurt independence. For example, 
 
+Participants also clarified where feedback belongs and how to deliver it without taking over. For example, P13 advised that tools should not \textit{``take the fun out of art''}. P10 proposed a divsion of labor for feedback:
+\begin{quote}
+    \textit{``since artists want feedback yet fear AI feedback being generic and nonconstructive, perhaps the ideal case would be to have AI be good at giving feedback for \textbf{ground-truth domains} with expert rubrics (e.g., anatomy) but avoid \textbf{prescriptive judgments} for subjective art and self expression (e.g., when helping with style or color palettes without standard definitions)''}
+\end{quote}
+Non destructive options such as temporary overlays or side-by-side-comparisons can keep artists original work intact while building on suggestions. Overall participants advocated for tooling that assisted them rather than make decisions for them, providing adjustable guidance under their control that improves craft while preserving flow. 
 
-% agency/control
+\subsubsection{Unexpected Surprise versus Accuracy.} 
+Another concern was with how much to tools should welcome surprise versus enforce accuracy. For many participants, serendipity was valuable for inspiration. P1 accidentally swapped the order of the style combination input, but was surprised to be happpy with the output, noting they liked the \textit{``hard shadows''} and \textit{``fuzzy neon highlights''}. Further, P2 noted that failed outputs may be \textit{``more helpful than the successful ones''} since it could be weirder or more unexpected in a way that provides them with inspiration. In these cases, we found that random and vague outputs were useful for open-ended brainstorming especially when borrowing elements rather than replicating them. In contrast, for committed work, participants emphasized the importance of fidelity and control. In this way, P2 cautioned that current systems are better for ideation than for early sketches. P1 and P3 expressed a more optimistic option, citing that tools such as our \textit{Interactive3D}prototype could be helpful for pose changes of references if only the lighting, shadows, and model proportions were close to real life. 
+
+Moreover, participants also weighted realism against the importance of pieces having a human touch to them. P7 explained how the generated image in style transfer \textit{``looks so good''} but also felt like \textit{``AI art''}. P2 wanted integrated AI tools (in software like Procreate/Photoshop) that improved their workflow by fixing proportions and lighting, or refining their style, but without generic outputs that look \textit{``too AI''}. Overall, participants wanted controlled instances of surprise, in which tools could invite unexpected variation during exploration while preserving precise, non-generic and human-guided results as their work moved toward completion. 
+
+% Overall, artists noted that random, vague, and unexpected outputs are great for divergent and open-ended brainstorming. The unexpected nature of certain AI tools also provide for fun inspiration, especially when artists are borrowing elements and not replicating them. However, artists highlighted that real work demands accurate fidelity and control - P2 cautioned that AI may be more helpful to generate ideas given its randomness rather than helping with early-stage sketches at its current performance level. P1 and P3 found the pose change and interactive 3D capabilities helpful, but noted they value accuracy so everything including shadows, lighting, and proportions need to be close to real life.
+
+% A similar tension emerged between generated content that look too realistic vs those that are slightly imperfect, but retaining the `human touch'. For example, both P1 and P7 complained that a lot of the generated output from the prototypes (e.g., style transfer) looked very ``AI'' in that they had to regenerate several times to get a non-generic output. P7 explained how the generated image in style transfer \textit{``looks so good''} but also felt like \textit{``AI art''}. P2 wanted integrated AI tools (in software like Procreate/Photoshop) that improved their workflow by fixing proportions and lighting, or refining their style, but without generic outputs that look \textit{``too AI''}.
+
+\subsubsection{Values versus Concerns of AI.} 
+There was also tension between artists, who despite seeing the value of AI as tools, are also aware of their potential in exploiting artists like themselves. Participants saw value in tools that took advantage of AI capabilities, but hestitated to trust them. P3 found it difficult to use AI tools to help improve their art because the even the act of uploading their art means that AI could plagiarize it. Moreover, P1 said that they would not unless contributing artists had granded permission for the use of their work. P5 fruther noted that they would feel comfortable only once artists were fairly compensated as well. As such, we found that participants tied trust to practices of consent and transparency, advocating for AI that was trained on public domain or opt-in licensed data and payment to artists. 
+
+Furthermore, participants wanted to be able to teach AI systems without copying the output. The reasoning behind this stemmed from a view of style as personal characteristic that some participants compared to handwriting (e.g., P10). P1 argued that \textit{``drawing a reference generated exactly from AI is the same as copying someone else's art and that you shouldn't be able to claim that as your own work, but you can copy as more of a learning process''} (P1). P8 advocated for turning tools into learning aids to help artists draw their own icons, for example, rather than copying the words of others (P8). Overall, participants strongly advocated for consent-based, transparent tools that could help novice artists such as themselves build skills and provide guidance while avoiding appropriation. 
+
+% In general, artists want AI that helps them make better art, but they will not trust or upload work to tools trained on scraped datasets that may violate other artists' copyrights. Furthermore, trust can only be earned if tools use public domain or opt-in licensed data and pay artists, show where training images came from and who an output might echo (similar artist names), let users mark uploads with ``don’t train'' and keep them private, and offer curated/permission-based datasets.
+
+% Finally, artists want AI to teach without copying, by treating each artist's style as personal (like one's own handwriting), focusing on techniques and moves (proportions, stroke economy, palette) rather than artist-name presets, keeping the original structure while applying style, and offering a gradual \textit{``blend into my own style''} transition. P1 explains that \textit{``drawing a reference generated exactly from AI is the same as copying someone else's art and that you shouldn't be able to claim that as your own work, but you can copy as more of a learning process''}. P8 even felt guilty using AI-made icons, and recommended making control sketch a learning tool that helps people draw their own icons instead of copying.
 

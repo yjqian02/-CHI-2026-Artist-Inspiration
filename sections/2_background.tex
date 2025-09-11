@@ -1,4 +1,5 @@
 \section{Related Work}
+Below, we first overview theory and empircal findings around the artistic creation process and steps, followed by existing creativity support tools for visual artists and designers. Finally, we summarize literature capturing artistic community perceptions and concerns around generative AI support tools, and compare these with recent excitement for around more democratized opportunities for artistic creation to surface a key gap for supporting early-stage workflows of novice artists, which we aim to address in this study.
 
 \subsection{Creative Workflows of (Professional) Visual Artists}
 Visual art creation is complex, iterative and resource-intensive process, containing subprocesses and tasks that vary widely depending on the artists' expertise, intentions, as well as the choice and availability of materials, medium and aesthetics \cite{multivariate, subproccess}. Since an entire century ago, psychology scholars sought to model the stages and dimensions of the artistic creation process:
@@ -15,7 +16,7 @@ More empirically, \citet{modeling} offered the first grounded macro-process mode
 % ideation \cite{osborn}
 
 
-But while professional artmaking has been extensively examined, the literature around student (or novice) artist practices remains relatively sparse --- leaving their wandering, nonlinear and unsystematic approaches underexplored \cite{ecological, mfa, modification}. The handful exceptions offered (1) insights that novices engage relatively more with earlier stages of the professional practice --- e.g., idea conception, documentation and development, discovery-oriented behaviors \cite{solving} --- since they are still learning how to produce and evaluate ideas and (2) an inventory of 17 stages of novice artists' practices, where key early processes included immersion, reflection, inspiration, research, ideation and selection \cite{botella2018stages}. Despite such detailed inventory of cognitive microprocesses, there remains a gap in understanding how novice artists interact with digital mediums or technology support during their creation process.
+But while professional artmaking has been extensively examined, the literature around student (or novice) artist practices remains relatively sparse --- leaving their wandering, nonlinear and unsystematic approaches underexplored \cite{ecological, mfa, modification}. The handful exceptions offered (1) insights that novices engage relatively more with earlier stages of the professional practice --- e.g., idea conception, documentation and development, discovery-oriented behaviors \cite{solving} --- since they are still learning how to produce and evaluate ideas and (2) an inventory of 17 stages of novice artists' practices, where key early processes included immersion, reflection, inspiration, research, ideation and selection \cite{botella2018stages}. Despite such detailed inventory of cognitive microprocesses, there remains a gap in understanding how novice artists interact with digital mediums \cite{cocreative} or technology support during their creative processes.
 
 
 % six core stages to their creative process: (1) an idea or a ``vision'' (2) documentation and reflection (3) first sketches (4) testing of forms and ideas (5) refinement of provisional objects (``drafts''/almost-finished products) (6) (follow-up) series or variations.
@@ -62,15 +63,18 @@ But while professional artmaking has been extensively examined, the literature a
 %     \item need to illustrate what are the emerging forms of support on that are specifically described as use cases for novice visual artists (i.e., there can techniques but not yet applied to this population)
 % \end{enumerate}
 
-Meanwhile, studies at the intersection of the UIST and HCI communities showcase various forms of digital creativity support tools \cite{centric, PortraitSketch, k_sketch}, some of which even center novice artists \cite{bob}. Many of these approaches adapt generative AI systems for co-creation~\cite{wang2025aideation, o2015designscape, ko2023large, fan2024contextcam, Midjourney, AdobeFirefly}.
+Meanwhile, studies at the intersection of the CHI and UIST communities showcase various forms of digital creativity support tools \cite{centric, PortraitSketch, k_sketch}, some of which even center novice artists \cite{bob} while others adapt generative AI systems for co-creation~\cite{wang2025aideation, o2015designscape, ko2023large, fan2024contextcam, Midjourney, AdobeFirefly, everybody_sketch}.
 %\todo{need better transition between hci and broader ml/cv techniques}
-Following the taxonomy of multimodal image-text generative models proposed in~\citet{liang2024foundations}, we categorize these types of co-creative AI tools into (1) summarization: those that reduce information content by highlighting the most salient parts of the input, (2) translation: methods that modify or edit information in certain dimensions while keeping other desired attributes consistent, and (3) creation: tools to generate data and increase information content while maintaining coherence and controllability. The following subsection describes the specific tools proposed and how they have been applied for human-centered applications.
+Following the taxonomy of multimodal image-text generative models  ~\cite{liang2024foundations}, we categorize these co-creative AI systems into (1) summarization tools that reduce information content by highlighting salient parts of inputs, (2) translation methods that modify or edit information along dimensions while keeping other desired attributes consistent, and (3) creation tools that generate data and increase information content while maintaining coherence and controllability. 
+% The following subsection describes the specific tools proposed and how they have been applied for human-centered applications.
 
-\textbf{Summarization}-based approaches help identify one or more most salient parts of the input, such as highlighting specific visual parts~\citep{kong2019understanding}, stripping away the details to obtain simpler sketches~\citep{swiftsketch}, or summarizing the image using its key attributes or database references~\citep{sermuga2021uisketch}. These tools have been show to be useful in the HCI community for data visualization in storytelling and presentation~\citep{kong2019understanding}, in helping index and retrieve relevant user interfaces for designers~\citep{sermuga2021uisketch}, and for summarizing visual interfaces into short language phrases for easier user understanding~\citep{wang2021screen2words}. Summarization-based approaches can also help break down visual content into multiple sub-parts including step-by-step tutorials~\citep{PaintsUNDO} or stroke references~\citep{neutralstroke} that help artists learn how particular effects are achieved and making the creative process to more transparent. Another advantage of summarization-based approaches is that the highlighted steps often enable users to have fine-grained control over the drawing process~\citep{paintsalter}.
+\textbf{Summarization}-based approaches highlight specific parts of visual inputs ~\citep{kong2019understanding}, strip away details to obtain simpler sketches~\citep{swiftsketch}, or summarize the image using key attributes or database references~\citep{sermuga2021uisketch}. Such tools support (1) data visualization in storytelling and presentation~\citep{kong2019understanding},  indexing and retrieving relevant user interfaces for designers~\citep{sermuga2021uisketch}, as well as in summarizing visual interfaces into short language phrases for easier user understanding~\citep{wang2021screen2words}. Summarization-based approaches also decompose visual content into multiple sub-parts including step-by-step tutorials~\citep{PaintsUNDO} or stroke references~\citep{neutralstroke}, which can support artists in learning techniques for achieving specific effects, in addition to making the creative process more transparent. By highlighting key steps, summarization-based approaches also afford users
+fine-grained control over the drawing process~\citep{paintsalter}.
+% highlighted steps often enable users to have 
 
-\textbf{Translation} approaches for co-creation can be performed using retrieval, generation, or editing. Retrieval-based methods return relevant visual information in a manner that is semantic similar, such as retrieving images based on textual descriptions~\cite{GenQuery, VSC}, multiple references~\citep{OrganizingPhoto}, or based on target attributes such as color, material, and style~\citep{wu2025qwen, gpt4v, liu2024llavanext}. Generative versions have also been proposed, particularly in developing more interactive text-to-image generative models that automatically refine text prompts to improve user satisfaction~\citep{wang2024promptcharm} and diversify the output space of generated images for personalization~\citep{poet}. Editing-based approaches seek to maintain a portion of the information, such as visual styles, while making targeted changes to the other parts like content or backgrounds. Recent advances in generative AI have enabled fine-grained style transfer and medium adaptation through lightweight model tuning techniques~\citep{blora, flux}, perspective or background changes with multimodal editing tools~\citep{qwenimage, backgroundremove}. A related line of work explores visual editing through direct manipulation, allowing designers to annotate or draw on an image and supplement these edits with text descriptions, thereby reducing reliance on purely textual prompts and giving users greater agency over the generative process~\cite{liu2025magicquill, ati}.
+\textbf{Translation} approaches for co-creation can be performed using retrieval, generation, or editing. Retrieval-based methods return relevant visual information in a manner that is semantic similar, such as retrieving images based on textual descriptions~\cite{GenQuery, VSC}, multiple references~\citep{OrganizingPhoto}, or based on target attributes such as color, material, and style~\citep{wu2025qwen, gpt4v, liu2024llavanext}. Generative versions have also been proposed, particularly in developing more interactive text-to-image generative models that automatically refine text prompts to improve user satisfaction~\citep{wang2024promptcharm} and diversify the output space of generated images for personalization~\citep{poet}. Editing-based approaches seek to maintain a portion of the information, such as visual styles, while making targeted changes to the other parts like content or backgrounds. Recent advances in generative AI have enabled fine-grained style transfer and medium adaptation through lightweight model tuning techniques~\citep{blora, flux}, perspective or background changes with multimodal editing tools~\citep{wu2025qwen, backgroundremove}. A related line of work explores visual editing through direct manipulation, allowing designers to annotate or draw on an image and supplement these edits with text descriptions, thereby reducing reliance on purely textual prompts and giving users greater agency over the generative process~\cite{liu2025magicquill, ati}.
 
-Finally, \textbf{creation} extends the information in a consistent way, often based on targeted sampling from generative models. For example, recent work has investigated how multiple elements from different source images or sketches can be combined in a consistent manner to produce new compositions~\cite{magiccolor, yan2025imagereferencedsketchcolorization}. Other tools convert 2D inputs into 3D assets for spatial exploration across multiple views in a geometrically-consistent manner~\citep{trellis, wang2024gaussianeditor, li2025voxhammer, brooks2023instructpix2pix}. Finally, image-to-video generative models have also been applied for human-centered applications, such as converting a web page into short videos to support designers in marketing~\citep{chi2020automatic} and converting documents into narrated instructional videos for education~\citep{chi2022synthesis}.
+Finally, \textbf{creation} extends the information in a consistent way, often based on targeted sampling from generative models. For example, recent work has investigated how multiple elements from different source images or sketches can be combined in a consistent manner to produce new compositions~\cite{magiccolor, yan2025imagereferencedsketchcolorization}. Other tools convert 2D inputs into 3D assets for spatial exploration across multiple views in a geometrically-consistent manner~\citep{trellis, wang2024gaussianeditor, li2025voxhammer, brooks2023instructpix2pix}. Finally, image-to-video generative models help convert a web page into short videos to support designers in marketing~\citep{chi2020automatic} and can convert documents into narrated instructional videos for education~\citep{chi2022synthesis}.
 
 \iffalse
 in purple from figma
@@ -110,23 +114,52 @@ Qwen-Image
 
 \fi
 
-Collectively, these systems highlight the growing potential of AI tools to not only generative and retrieve but also summarize, recombine, and transform references in ways that align with the iterative and exploratory nature of design practice. Much of this work, however, emphasizes professional designers and commercial outcomes rather than artistic self-expression or learning. Our work addresses this gap by focusing on novice artists and their early-stage inspiration workflows, exploring how AI can serve as a partner in creative exploration rather than a tool for producing finished works.
+Collectively, these systems highlight growing potential of AI tools to not only generate and retrieve but also summarize, recombine, and transform references in ways that support iterative and exploratory workflows. 
+% that align with the iterative and exploratory nature of design practice
+But much of this work center professional designers and commercial outcomes rather than artistic self-expression or learning. Our work addresses this gap by focusing on the early-stage inspiration workflows of novice artists to explore how AI can serve as a partner in their creative exploration, instead of as a tool to produce finished works.
+
+% \begin{itemize}
+%     \item student-ai collaboration in drawing \cite{student_ai}
+%     \item \href{https://arxiv.org/pdf/2501.12374#page=4.48}{expert versus novice use cases}
+% \end{itemize}
+
 
 % \eh{Recent 3D editing methods provide artists with new ways to create and refine digital content. \textbf{2D-to-3D pipelines} adapt diffusion-based image editing to multi-view or NeRF representations, giving artists flexible text-guided edits but with limited cross-view consistency \cite{brooks2023instructpix2pix,haque2023instructnerf2nerf,yu2023editdiffnerf}. \textbf{Native 3D approaches}, such as Gaussian-based editing, allow more localized and precise control directly in 3D, which is valuable for fine adjustments \cite{chen2023gaussianeditor,wang2024gaussianeditor}. Meanwhile, \textbf{text-to-3D generation frameworks} inspire new creative possibilities by synthesizing complete scenes, though they offer less control for targeted modifications \cite{poole2022dreamfusion,lin2022magic3d,wang2023prolificdreamer}. More recently, \textbf{training-free techniques} like VoxHammer improve coherence and preservation in edits, supporting workflows where artists need reliable, detail-preserving modifications \cite{li2025voxhammer}.}
 
 \subsection{Artists' Perceptions of Generative AI versus Visions of Democratization and Access}
-expert versus novice use cases: https://arxiv.org/pdf/2501.12374#page=4.48
-illustrate artists' concerns about gen AI
-\begin{enumerate}
-    \item attribution and plagiarism
-    \item labor rights
-    \item resistance to AI tools
-    \item perspective from critical AI and STS 
-\end{enumerate}
+
+Such recent advances spurs a wave of excitement for the transformative potential of generative AI for democratizing access to the artmaking process. \citet{chatterjee} outlines its power potential to produce emotional and evocative works, as well as to challenge traditional notions of aesthetics -- thereby democratizing art ``by making the tools of artistic creation accessible to a broader audience'' \cite{liberation}. \citet{imperial} argues that generative AI  have been facilitated to serve as a new form of every day life, extending the \textit{imperical mode of living} into the sphere of everyday aesthetic production. 
+
+% . getting feedback.. collaboration creating communities... societies... 
+% ~\cite{design} 
+  % \citep{devalue} 
+  
+But despite the potential for generative AI to support artistic co-creation, the artistic community remains skeptical and threatened by their potential to plagiarize \citep{shi2023understanding}, harm rights over attribution and ownership \citep{lima} as well as unfair models of compensation~\citep{kawakami2024impact, foreground} --- prompting calls for more inclusive and decolonial futures of AI in the arts ~\citep{decolonial}.
+% several key concerns remain around adoption in their workflows, ranging from unclear attribution, to potential plagiarism, to harming labor rights
+% ~\citep{shi2023understanding,foreground,cocreative}.
+% Alongside productivity gains, ~\citet{kawakami2024impact} found growing public distrust toward artists and their labor, causing reduced income, stress and fear of job loss.
+~\citet{giacomin2023intersection} highlighted contested debates surrounding copyright issues, ethical and legal concerns, the impact on the art industry, questions of authorship and authenticity as well as how AI reshapes our understanding of creativity and art itself.
+~\citet{decline_novelty} found peak artwork content novelty to increase over time but average novelty to decline, suggesting an expanding but inefficient idea space, which calls for more harmonious blending of human exploration and AI exploitation. 
+Finally,~\citet{unstraighten} found queer artists to struggle in using these models due to various embedded normative values, such as hyper-positivity and anti-sexuality.
+
+
+A key factor impacting artists' perception of generative AI is their level of experience. Experienced visual professionals with more confidence in their originality, creativity, and empathic skills were more likely to find generative AI's role as assistive~\citep{li2024user, kawakami2024impact}. 
+Meanwhile, skill degradation, job replacement, and creativity exhaustion adversely impact junior workflows~\citep{li2024user}.
+\citet{epstein2023art} proposes that disruptive technological advances will not necessarily end all human artistic creation, but rather produce more complex effects and shifts in aesthetics, roles and practices.
+% \cite{kawakami2024impact} and \cite{unstraighten} both find experience artists less affected by such negative impacts
+~\citet{ko2023large} and~\citet{inie2023designing} both found significant potential and new conceptions on what constitutes creativity in relation to generative AI --- acknowledging AI's versatile roles with high usability to support creative works in automating the creation process (i.e., automation), expanding their ideas (i.e., exploration), and facilitating or arbitrating communication (i.e., mediation). But despite such visions to support the artistic creation process, the current body of work falls short in understanding how such digital and generative forms of support align with grounded needs of \textit{novice} artists \cite{student_ai}, who represent a much broader segment of the artistic community than professional or commercial practitioners.
+
+% Finally, we refer the reader to the systematic surveys by~\citet{hu2025designing} and~\citet{epstein2023art}, as well as the recent workshops~\citep{muller2025genaichi} and panels~\citep{jiang2025forging} at HCI conferences for a balanced view between both sides of the debate. 
 
 % \subsection{}
-making a case for studying novice and early-career artists as part of an equity-drive effort
-\begin{enumerate}
-    \item any research showing genAI tools can lower technical barriers? (we'll have to note in limitations this is not necessarily true for everyone)
-    \item emerging research on expanding access to quality tools beyond professionals
-\end{enumerate}
+% making a case for studying novice and early-career artists as part of an equity-drive effort
+% \begin{enumerate}
+%     \item any research showing genAI tools can lower technical barriers? (we'll have to note in limitations this is not necessarily true for everyone)
+%     \item emerging research on expanding access to quality tools beyond professionals
+% \end{enumerate}
+
+
+
+
+
+

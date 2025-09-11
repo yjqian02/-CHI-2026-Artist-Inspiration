@@ -1,19 +1,24 @@
 \section{Introduction}
 Visual art creation is a complex, multistage process requiring significant time, effort and material investment. 
-Recent advances and uses of generative AI show potential for supporting this intensive creation process through consistent, guided generation and editing \cite{zhang2023text} of increasingly realistic and detailed visual outputs \cite{podell2024sdxl}. Such progress fuels excitement about potentials for visual generative models to revolutionize and democratize art (education) communities \cite{paradox, democratize, edu}. Despite the promise, recent scholarship studying the influence of generative systems on artists call for further engagement and foregrounding of input and opinions from the artistic community itself \cite{foreground, decolonial}.
+Recent advances and uses of generative AI show potential for supporting this intensive creation process through consistent, guided generation and editing \cite{zhang2023text} of increasingly realistic and detailed visual outputs \cite{podell2024sdxl}. 
+Such progress, coupled with lowered barriers of access, spark excitement around potentials for visual generative models to revolutionize and democratize art (education) communities \cite{paradox, democratize, edu}. 
+A burgeoning body of creativity support tools enabled by visual generative AI explored ways to augment the workflows of designers across various domains \cite{wang2025aideation, GenQuery, architectural}. 
 
-The vast majority of visual generative AI tools in HCI scholarship explored ways to support creative workflows of designers \todo{cite a lot of studies}. But while designers create to serve commercial and professional purposes, non-professionals visual artists such as novices often create to develop new techniques and capabilities \cite{clinical, personal}, practice self-expression \cite{real_benefits} or challenge conventional aesthetic and creative boundaries \cite{synesthesia, art_implications}. The general-purpose and zero-shot nature of recent models makes artmaking accessible to audiences with little to no training, experience or knowledge \cite{lgtm} -- 
-allowing them to produce high-quality and novel visual outputs 
-at reduced costs and effort.
+% Despite the promise, recent scholarship studying the influence of generative systems on artists call for further engagement and foregrounding of input and opinions from the artistic community itself \cite{foreground, decolonial}.
+
+While designers create to serve commercial and professional purposes, novices may create to develop new techniques and capabilities \cite{clinical, personal}, practice self-expression \cite{real_benefits} or challenge conventional aesthetic and creative boundaries \cite{decline_novelty, art_implications}. The general-purpose and zero-shot nature of recent models as the potential to make art-making accessible to audiences with limited training\cite{lgtm}. In theory, this could allow for anyone interested in visual art-making to build skills to enjoy are making and learn to appreciate the craft with less of a barrier to entry. 
+% allowing them to produce high-quality and novel visual outputs at reduced costs and effort.
 % But artmaking also benefits its creators -- helping them develop abstract capabilities (e.g., critical observation \cite{clinical} and reflection \cite{real_benefits}, creativity \cite{personal}, communication \cite{}, emotional expression \cite{}), and helping to enhance more measurable abilities such as academic performance \cite{grades} and memory \cite{memory}. 
 % (as opposed to self-expression and -improvement in artistic techniques) 
-\todo{motivation about upskilling novice workers.. reaching a broader community than only professionals.. potential for education etc. Hong: is it also fair to say that existing HCI work has largely focused on professional designers, while novice artists demand different form of support? Jane: yes we have evidence for this in 2.1}
+This expansion of access to art (reference) creation tools opens up opportunities for broader perspectives and audiences to learn and benefit from the creative process of art-making \cite{jackson}.
+
+% \todo{motivation about upskilling novice workers.. reaching a broader community than only professionals.. potential for education etc. Hong: is it also fair to say that existing HCI work has largely focused on professional designers, while novice artists demand different form of support? Jane: yes we have evidence for this in 2.1}
 % Such developments lead scholars to consider how generative systems may challenge conventional aesthetic and creative boundaries \cite{synesthesia, art_implications} 
 % -- allowing novices \todo{we havent defined or motivated novices at this point yet} to produce high-quality and novel visual outputs without significant investment into materials or formal training.
 
 
-Yet, existing generative AI systems often fall short in supporting novice visual artists with effectively integrating capabilities into their creative processes \cite{unstraighten}, leaving them stressed and disoriented \cite{impact, lgtm} -- despite works demonstrating its potential to augment early stages of artistic creation \cite{art_implications, poet, lamuse}. 
-Few studies investigated how artists (especially novices \cite{review}) adopted co-creation and inspiration tools to meaningfully organize and reflect on inputs \cite{lamuse}, leaving a critical gap in understanding how recent advances can support novice visual artists in early-stages of their personal, expressive and educational practices -- which include processes such as immersion, reflection and research to spark inspiration \cite{botella2018stages}.
+Yet, existing generative AI systems often fall short in supporting novice visual artists with effectively integrating capabilities into their creative processes \cite{unstraighten}, leaving them stressed and disoriented \cite{kawakami2024impact, lgtm} -- despite works demonstrating its potential to augment early stages of artistic creation \cite{art_implications, poet, lamuse}. 
+Few studies investigated how artists (especially novices \cite{hu2025designing}) adopted co-creation and inspiration tools to meaningfully organize and reflect on inputs \cite{lamuse}, leaving a critical gap in understanding how recent advances may align with early-stages workflows of novice visual artists \cite{botella2018stages}.
 % \begin{itemize}
     % \item define early stage (from Botella et al. this is immersion, reflection, and research process)
     % \item current co-creation and inspiration tools remain limited in how they help visual artists meaningfully organize and reflect on inputs
@@ -21,17 +26,19 @@ Few studies investigated how artists (especially novices \cite{review}) adopted 
     % \item 
 % \end{itemize}
 % \todo{merge with paragraph above on yet, existing generative } 
-Meanwhile, artists remain deeply distrusting of generative systems due to potential downstream challenges influencing members of the artistic community, including economic and reputational harms -- raising questions about what artist-centered uses of generative AI tools could look like. 
-\todo{Hong: maybe here we reemphasize the gap again: lack of understanding/support of novice workflows, limited understanding of how genai might support early-stage ideation, instead of final output; misalignemnt/distruct between artists and existing tools?}
+Meanwhile, artists remain deeply distrusting of generative systems due to harmful downstream impacts on members of the artistic community (e.g., economic and reputational harms arising from inadequate attribution or compensation), raising questions about what artist-centered uses and developments of generative AI tools could look like. To date, the vast majority of studies among HCI and UIST focused on understanding and supporting final-stage outputs
+of professional designers \cite{design_professionals} and artists \cite{shi2023understanding}, while generative AI support for the early stages of novice visual artists workflows remain underexplored -- overlooking a key opportunity to bridge the gap between creativity support tools and emerging members of the artistic community.
+
+% \todo{Hong: maybe here we reemphasize the gap again: lack of understanding/support of novice workflows, limited understanding of how genai might support early-stage ideation, instead of final output; misalignment/distruct between artists and existing tools?}
 % \todo{we dont talk about ethical challenges and harms..} as well as economic and reputational harms to their community members, raising urging questions about what accessible and equitable uses of generative AI tools could look like for artmaking. 
 
 % \textcolor{red}{Describe here our first contribution: A descriptive account of early-stage workflows for novice visual artists}
 
 % The literature, press and our own interview participants revealed how artist communities strongly resisted AI use – predominantly due to lack of attribution and accreditation \cite{credit} \todo{we dont talk about this also} (plagiarism \& copyright infringement) to the underlying artworks that are used to train and develop the model, as well as unpaid compensation to artists \cite{foreground}, resulting in financial and economic losses. Beyond legal and commercial concerns, environmental impacts and preferences for experience-inspired artworks also emerged as ethical and aesthetic concerns around AI-generated art \cite{versus}. 
 
-To better align visual AI generation tools with artist workflows and intentions during these early stages, this study considers alternative and non-professional use cases
+To better align visual generative AI tools with artist workflows and intentions during these early stages, this study considers alternative and non-professional use cases
 % Thus, instead of professional and commercial use cases such as design work, this study considers alternative uses of visual AI generation tools 
-that directly serve the artist communities that they benefit and profit from. While prior work focused on AI art or final-image generation, we employed a two-step approach to explore ways of 
+that directly serve the artist communities that they benefit and profit from. While prior work focused on AI art \cite{explorers, machine} or final-image generation \cite{lgtm}, we employed a two-step approach to explore ways of 
 % generative AI tools might scaffold the 
 % maybe incorporate into related works?
 % Critical AI scholars point to the colonial \cite{decolonial}, imperial \cite{imperial} and anthropomorphic nature of commercial generative AI systems.
@@ -44,7 +51,10 @@ that directly serve the artist communities that they benefit and profit from. Wh
 % [there are more works discussing democratization/access]
 % [there are also many emerging techniques that may support casual/early-career artists]
 % Through a two-step approach, we explored ways of 
-integrating generative AI tools into the early-stage workflows of novice visual artists. First, we interviewed 15 novice artists about their existing practices to understand initial perceptions of available generative tools, as well as painpoints to their artistic creation processes. Then, we mapped these expressed needs to state-of-the-art technical advances, and presented four \todo{4 or 6?} functional prototypes using existing methods to probe for reactions and design objectives that artists prioritized for future forms of tooling support. These prototypes introduce state-of-the-art capabilities for medium and style transfer, visual combinations and editing, step-by-step tutorials and extensions of 2D into interactive 3D viewing.
+integrating generative AI tools into the early-stage workflows of novice visual artists. First, we interviewed 15 novice artists about their existing practices to understand initial perceptions of available generative tools, as well as painpoints to their artistic creation processes (\S\ref{interview}). Then, we mapped these expressed needs to state-of-the-art technical advances, to develop and present six functional prototypes in codesign workshops with 14 novices (\S\ref{codesign}).
+Leveraging state-of-the-art capabilities (e.g., medium and style transfer, visual combinations and editing, step-by-step tutorials and extensions of 2D into interactive 3D viewing),
+the interactive prototypes allowed us to probe novice artists for reactions and design objectives they prioritized for future forms of tooling support. 
+% These prototypes exposed 
 % By bringing these capabilities together we significantly advance the state-of-the-art in 
 % }
 
@@ -63,18 +73,20 @@ integrating generative AI tools into the early-stage workflows of novice visual 
     % \item online prior work focused on AI art or final-image generation, we explore how generative AI tools might scaffold \todo{add design objectives}
 % \end{itemize}
 
-Research questions:
+\noindent \underline{Research questions}:
 \begin{enumerate}
 \item[\textbf{RQ 1a}] 
 \textbf{What processes do novice visual artists undertake to navigate early stages of their creative workflows, and what challenges do they encounter?}
-\begin{enumerate}
-    \item[\textbf{1b}] \textbf{Which of these early-stage challenges might align with emerging generative AI capabilities?}
+% \begin{enumerate}
+\item[\textbf{RQ 1b}] \textbf{Which of these early-stage challenges might align with emerging generative AI capabilities?}
     % are the needs for tool support that have in the early stages?
-\end{enumerate}
+% \end{enumerate}
 % \item[\textbf{RQ 2}] 
 % \textbf{What are the needs for tool support that novice artists have in the early stages?}
-\item[\textbf{RQ 2}] 
-\textbf{How do novice artists perceive opportunities for emerging capabilities to support their early-stage artmaking? What are considerations \dots \todo{iterate on this more once we have more workshop findings}
+\item[\textbf{RQ 2a}] 
+\textbf{How do novice artists perceive opportunities for emerging capabilities to support their early-stage artmaking? 
+\item[\textbf{RQ 2b}] 
+What design tensions emerge when considering future advances and use cases of such capabilities?
 % What are the opportunities for supporting novice artists with generative AI capabilities in the early stages?
 }
 \end{enumerate}

@@ -1,3 +1,12 @@
+\FloatBarrier
+\begin{figure}[tbp]
+    \centering
+    \resizebox{.7\textwidth}{!}
+    {\includegraphics{figures/methods.png}}
+    \caption{Overview of Phase 1 \& Phase 2 Methods}
+    \label{fig:method}
+\end{figure}
+
 \section{Methods}
 We start with describing and reflecting on our positions as researchers in this project. Then we describe our process conducting semi-structured interviews with novice artists (\S\ref{interview}), resulting in a taxonomy of their challenges, which we mapped to emergent generative capabilities (\S\ref{map}). Between the two phases, our process
 mapping artistic challenges and needs to nascent techniques helped us identify relevant tools that we presented to participants as probes in Phase 2 (\S\ref{probes}).
@@ -22,14 +31,14 @@ We acknowledge how our dual roles---as both system designers and analysts---posi
 
 
 \subsection{Phase 1: Interview Methods} \label{interview} % Alice 
-To understand nuanced perspectives of novice artists' needs, we conducted semi-structured qualitative interviews with 13 non-professional artists working across a range of mediums and practices. \todo{Outline procedures in terms of how we asked many to describe stages of their artistic practice, preferences of mediums and tools, considerations etc.} This approach allowed us to capture rich, situated insights about the needs artists have in the early stages of visual art creation. Our interviews focused on participants' current practices with visual art creation in the early stages, tools used, and challenges faced. This initial interview phase informed the development of a taxonomy of four key areas of support for novice artists.
+To understand nuanced perspectives of novice artists' needs, we conducted semi-structured qualitative interviews with 13 novice artists working across a range of mediums and practices. \todo{Outline procedures in terms of how we asked many to describe stages of their artistic practice, preferences of mediums and tools, considerations etc.} This approach allowed us to capture rich, situated insights about the needs artists have in the early stages of visual art creation. Our interviews focused on participants' current practices with visual art creation in the early stages, tools used, and challenges faced. This initial interview phase informed the development of a taxonomy of four key areas of support for novice artists.
 
 \input{tables/demographics}
 
-\subsubsection{Interview Recruitment}
+\subsubsection{Interview Recruitment.}
 We recruited participants who self-identified as novice visual artists to better understand and support their early-stage creative practices. To ensure a diverse range of experiences, we sampled participants with varying degrees of familiarity with physical and digital art mediums. Recruitment was conducted through a combination of snowball sampling and calls posted on university-affiliated online platforms and listservs. All participants were based in the United States and fluent in English. See Table \ref{tab:interview-demographics} for participant demographics. Participants received \$30 USD for completing a 60-minute interview with at least one of the 4 authors. 
 
-\subsubsection{Data Analysis}
+\subsubsection{Data Analysis.}
 We conducted reflexive thematic analysis~\cite{braun2019reflecting} on interview transcripts to identify patterns in participants’ experiences and design feedback. Our process began with first-cycle open coding to surface recurring concepts across interviews and workshops. In the second cycle, we grouped codes into broader thematic categories that reflected early-stage creative processes and challenges that novice visual artists encounter. 
 Data from the co-design sessions were analyzed separately with a focus on surfacing emergent design goals, constraints, and values articulated by participants. 
 Three researchers collaboratively coded the dataset, engaging in memo writing throughout the process to document analytic decisions and emergent insights. Through iterative discussion and refinement, the coding scheme was revised to ensure consistency and alignment with the evolving thematic structure.
@@ -38,13 +47,13 @@ Three researchers collaboratively coded the dataset, engaging in memo writing th
 \label{map}
 
 The ground-up need-finding and analysis process resulted in Table \ref{tab:phase1-summary} \jh{this taxonomy should be standalone from the sankey, capturing just our needs and subneeds}, containing four higher-level and ten more granular challenges. Internally, our team members worked together to categorize these under early stages of the novice artistic workflow, and mapped a selection of these with emerging generative techniques that our team perceived as potential matches. Based on identified matches, we selected six recently-released and open-sourced techniques that carry capabilities relevant to our participants' artistic needs, and subsequently built interfaces to surface these tools -- detailed in \S\ref{probes}. 
-\jh{for the team: we have time constraints, but there's a chance to conduct follow up analysis for the need validation during revise and resubmit if desired/necessary}
+% \jh{for the team: we have time constraints, but there's a chance to conduct follow up analysis for the need validation during revise and resubmit if desired/necessary}
 
 \begin{figure}[tbp]
     \centering
-    \resizebox{0.8\textwidth}{!}
-    {\includegraphics{figures/sankey.pdf}}
-    \caption{\textbf{Mapping of needs, sub-needs, relevant existing tools, and broader generative tool categories} We find that users broadly face 4 challenges: .}
+    \resizebox{\textwidth}{!}
+    {\includegraphics{figures/sankey.png}}
+    \caption{\textbf{Mapping of higher-level and granular challenges, relevant existing tools, and broader generative tool categories} We find that users broadly face 4 higher-level challenges: (1) quicker and better access to references, (2) visualizing combinations of references, (3) perspective and feedback from another artist, and (4) support to learn art techniques and styles, which expand into ten more granular challenges. Based on these needs, we developed 8 prototypes demonstrating the potential for AI tools to augment creative workflows. At a high level, these tools enable (1) reference, capture, 3D-staging, (2) structure-to-style refinement, and (3) transparency, learning, community. \todo{if folks could check this} }
     \label{fig:prototypes}
 \end{figure}
 
@@ -63,9 +72,7 @@ We also viewed observations from participants prior to workshop sessions to bett
 % • Literature-informed-add-ons of plausible capabilities/considerations added from prior work before workshops
 % • Meanwhile, participants completed HW to try out 6 lightweight prototypes as provocations we asked them to do before workshop
 
-\subsubsection{Co-Design Workshops with Novice Artists}
-To further investigate the tensions that might arise when implementing tools to address the four challenges identified in our study, we conducted four workshops with 3–4 participants each. Participants were recruited first from our interview pool, and later through social media postings and snowball sampling via referrals. The workshops were designed to create space for artists to converse with one another, compare experiences, and collectively reflect on the promises and complications of emerging AI tools. Each session began with participants reflecting on six prototype concepts\todo{add explanation of co-design methodology and cite examples of other papers that have done this}. We asked them to discuss challenges that might emerge when using such tools in their own practices, as well as opportunities for improvement. After this exercise, we introduced participants to examples of state-of-the-art tools identified through a survey of recent HCI and creativity support research\todo{need to explain how we did this selection}. These examples were not intended to be comprehensive, but rather to highlight representative directions in current research and to prompt further reflection on potential frictions \todo{this is alice's attempt at getting ahead of reviewers, others please help revise}. Finally, throughout the discussions, we encouraged participants to consider the broader ethical and practical implications of generative AI systems in art-making. In particular, we asked them to reflect on risks that may arise for novices and communities, as well as to share any recommendations for how such systems could better support creative growth while mitigating unintended consequences.
-
-
+\subsubsection{Co-Design Workshops with Novice Artists.}
+To further investigate potential tensions when implementing tools to address the four challenges identified, we conducted four workshops with 3–4 participants each --- recruited first from our interview pool, and later through social media postings and snowball sampling via referrals. The workshops were designed to create space for artists to converse with one another, compare experiences, and collectively reflect on the promises and complications of emerging AI tools. Each session began with participants reflecting on six prototype concepts\todo{add explanation of co-design methodology and cite examples of other papers that have done this}. We asked them to discuss challenges that might emerge when using such tools in their own practices, as well as opportunities for improvement. After this exercise, we introduced participants to examples of state-of-the-art tools identified through a survey of recent HCI and creativity support research\todo{need to explain how we did this selection}. These examples were not intended to be comprehensive, but rather to highlight representative directions in current research and to prompt further reflection on potential developments and frictions. Finally, throughout the discussions, we encouraged participants to consider the broader ethical and practical implications of generative AI systems in art-making --- asking them to reflect on risks that may arise for novices and communities, as well as to share any recommendations for how such systems could better support creative growth while mitigating unintended consequences.
 
 % no commercially available tools for needs 4.2-4.4, but they did have access to google search, etc.
