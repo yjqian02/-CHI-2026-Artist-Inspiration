@@ -15,19 +15,36 @@ Based on novice artist challenges identified above, we developed interactive co-
 \subsubsection{Structure-to-Style Refinement} tools progressively convert initial ``structured'' forms (e.g., basic shape, outline, style, or geometric layout) into more aesthetically complex or stylized versions. 
 % We find that the following tools for structure and style refinement - visual editing, style transfer, and medium transfer, can help address key needs raised by novice artists. 
 
-\paragraph{(i) \underline{Visual editing}. } Traditional image editing with generative models is largely text-driven, but artists often find text prompts insufficient for capturing precise edits. We leveraged MagicQuill~\citep{liu2025magicquill} to combines direct visual manipulation with generative editing, allowing users to sketch or mark directly on an existing image (), reducing the burden of linguistic description while affording immediate, tangible control.
+\paragraph{(i) \underline{Visual editing}. } Traditional image editing with generative models is largely text-driven, but artists often find text prompts insufficient for capturing precise edits. We leveraged MagicQuill~\citep{liu2025magicquill} to combines direct visual manipulation with generative editing, allowing users to sketch or mark directly on an existing image (need uncovered in \S\ref{visualize}), reducing the burden of linguistic description while affording immediate, tangible control.
 % over how images are 
 % , such as drawing where a new element should be inserted, erasing unwanted objects, or adjusting color regions, while also supporting optional text instructions to refine intent (e.g., ``make the fish's mouth bigger''). This approach transformed.
 
 \paragraph{(ii) \underline{Style transfer}.}
 % Designers often seek to apply the stylistic qualities of one work to the content of another \todo{paul - be more precise and quote the specific needs}.
 
-To bridge the gap between artists observing other's work and translating from others' stylistic tradition to their own, we developed a prototype that enables the transfer of visual style between images. Building on recent advances in generative editing, we adapted FLUX Style Shaping\footnote{https://huggingface.co/spaces/multimodalart/flux-style-shaping}, a method based on FLUX.1 Redux~\citep{flux} that allows flexible restyling while preserving image fidelity. In our prototype, users provided two inputs: a \textit{structure image} that defined the underlying composition, and a \textit{reference image} whose style would be applied. The system further exposed controls for adjusting the balance between semantic preservation and stylistic strength, giving participants the ability to fine-tune how much of the original structure was retained versus how strongly the reference style was imposed. This design showcased the creative potential of style transfer as a way to reimagine existing imagery and expand a designer’s stylistic repertoire.
+To match artists' desires to observe other's work and translate others' stylistic tradition to their own (also a need from \S\ref{visualize}), 
+% developed a prototype that enables the transfer of visual style between images. Building on recent 
+% advances in generative editing, 
+we adapted FLUX Style Shaping\footnote{https://huggingface.co/spaces/multimodalart/flux-style-shaping}, a recent advance in generative editing based on ~\citep{flux} to enable flexible restyling while preserving image fidelity. 
+% In our prototype, users provided two inputs: a 
+Users provide (1) a \textit{structure image} defining the underlying composition, and a (2) \textit{reference image} to apply style onto. 
+The system further contain controls to adjust balance between semantic preservation and stylistic strength.
+% , affording fine-grained control over balance of original structure versus strength of reference style. 
+% This design showcased the creative potential of style transfer as a way to reimagine existing imagery and expand a designer’s stylistic repertoire.
 
 \paragraph{(iii) \underline{Medium transfer}.}
-Another common challenge artists face is exploring how a reference image might appear in different artistic media. Rather than starting from scratch, they often prefer to preserve an image’s visual content while reinterpreting it through another material form. To address this, we built a prototype that transforms a user-provided image into a medium of choice, for example, \textit{a cat in oil paint re-rendered as a pencil sketch or watercolor}. Participants uploaded an image, specified a target medium, and received a transformation generated with the GPT-image-1 editing model. This prototype allowed us to test how medium variation can inspire new creative workflows while maintaining the original semantics of the subject.
+Also based on \ref{visualize}, artists often wonder how a reference image might appear in a different medium. 
+% Rather than starting from scratch, they often prefer to preserve an image’s visual content while reinterpreting it through another material form. 
+% To address this, w
+We built an interface that used the GPT-image-1 editing model to transform user's image into their target medium.
+% of choice, for example, \textit{a cat in oil paint re-rendered as a pencil sketch or watercolor}. 
+% Participants uploaded an image, specified a target medium, and received a transformation generated with the GPT-image-1 editing model. This prototype allowed us to test how medium variation can inspire new creative workflows while maintaining the original semantics of the subject.
 
-\subsubsection{Reference, Capture, and 3D-staging.} These tools help search, store, and manage references to source material like images, videos, texts, or styles. A key need from novice artists is the ability to flexibly combine multiple references to form a more coherent image (i.e., style combination). In addition to 2D source material and references, some tools in this category also extend to multi-view 3D environments, such as animating images through time or across multiple views (i.e., interactive 3D creation from a single image).
+\subsubsection{Reference, Capture, and 3D-staging.} 
+These tools help search, store, and manage references to source material like images, videos, texts, or styles.
+% . A key need from novice artists is the ability to flexibly combine multiple references to form a more coherent image (i.e., style combination). 
+In addition to 2D source material and references, some tools in this category also extend to multi-view 3D environments.
+% , such as animating images through time or across multiple views (i.e., interactive 3D creation from a single image).
 
 \paragraph{(i) \underline{Style Combination}.}
 Artists often draw on multiple references simultaneously, blending objects, motifs, or styles to spark unexpected ideas. A recurring challenge, however, is merging these diverse elements into a single coherent composition — for example, \textit{a realistic panda rendered in the aesthetic of a traditional Gyotaku fish print}.
