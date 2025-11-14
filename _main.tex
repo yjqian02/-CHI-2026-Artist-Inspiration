@@ -1,4 +1,4 @@
-\documentclass[manuscript, review, anonymous]{acmart}
+\documentclass[manuscript]{acmart}
 %%
 %% \BibTeX command to typeset BibTeX logo in the docs
 \AtBeginDocument{%
@@ -18,10 +18,9 @@
 \usepackage{graphicx}
 \usepackage{subcaption} % for imaes
 \usepackage{placeins}
-\usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{tabularx}
-
+\usepackage{enumitem}
 
 \newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
 \newcommand{\paul}[1]{\textcolor{red}{[paul: #1]}}
@@ -49,28 +48,76 @@
 
 \begin{document}
 
-\title[]{Exploring Opportunities to Support Novice Visual Artists' Inspiration and Ideation with Generative AI}
+\title[Early-Stage GenAI Support for Novice Artists]{Exploring Opportunities to Support Novice Visual Artists' Inspiration and Ideation with Generative AI}
 
+\author{Cindy Peng\textsuperscript{*}}
+\email{}
+\affiliation{%
+  \institution{Carnegie Mellon University}
+  \country{USA}
+  \authornote{Co-first authors contributed equally to this research.}
+}
 
-% \author{Alice Qian Zhang\textsuperscript{*}}
-% \email{aqzhang@andrew.cmu.edu}
-% \affiliation{%
-%   \institution{Carnegie Mellon University}
-%   \country{USA}
-%   \authornote{This work was completed while the author was an intern at Microsoft Research}
-% }
+\author{Alice Qian\textsuperscript{*}}
+\email{aqzhang@andrew.cmu.edu}
+\affiliation{%
+  \institution{Carnegie Mellon University}
+  \country{USA}
+}
 
+\author{Linghao Jin}
+\email{linghaoj@usc.edu}
+\affiliation{
+    \institution{University of Southern California}
+    \country{USA}
+}
+
+\author{Jieneng Chen}
+\email{jchen293@jhu.edu}
+\affiliation{
+    \institution{Johns Hopkins University}
+    \country{USA}
+}
+\author{Evans Xu Han}
+% \email{}
+\affiliation{
+    \institution{Stanford University}
+    \country{USA}
+}
+
+\author{Paul Pu Liang}
+\email{ppliang@mit.edu}
+\affiliation{
+    \institution{Massachussetts Insitute of Technology}
+    \country{USA}
+}
 
   
-% \author{Hong Shen}
-% \email{hongs@andrew.cmu.edu}
-% \affiliation{%
-%   \institution{Carnegie Mellon University}
-%   \country{USA}}
+\author{Hong Shen}
+\email{hongs@andrew.cmu.edu}
+\affiliation{%
+  \institution{Carnegie Mellon University}
+  \country{USA}
+  }
+
+\author{Haiyi Zhu}
+\email{jhsieh2@andrew.cmu.edu}
+\affiliation{
+   \institution{Carnegie Mellon University}
+  \country{USA}
+}
+
+\author{Jane Hsieh}
+\email{jhsieh2@andrew.cmu.edu}
+\affiliation{
+   \institution{Carnegie Mellon University}
+  \country{USA}
+}
 
 
 
-\renewcommand{\shortauthors}{Alice Qian Zhang, et al.}
+
+\renewcommand{\shortauthors}{Cindy Peng, et al.}
 
 \begin{abstract}
 \input{sections/0_abstract}
@@ -102,6 +149,7 @@
 % \input{sections/6_workshop_method}
 \input{sections/6_workshop_findings}
 \input{sections/7_discussion}
+\input{sections/8_conclusion}
 % \input{sections/9_conclusion}
 
 
